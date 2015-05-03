@@ -1,0 +1,11 @@
+.container {       /* весь центральный контент с хеадером */
+    width: 1000px;
+    margin: 0 auto;
+    background: gray;
+}
+
+
+.space {
+    float: right
+}
+        
