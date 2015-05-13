@@ -7,7 +7,10 @@
 <!-------------------------------------BODY---------------------------------------------------------------------------->
     <body>
     <?php
-        $lang="en";
+        $str = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
+        $lang= substr("$str", 0, 2);
+        //var_dump($lang);
+        //$lang="en";
         if (isset ($_GET["ru"])){
             $lang="ru";
         }
@@ -21,9 +24,9 @@
     ?>
     <div class="container">
         <div  style="height: 35px" align="center">
-            <div class="space"><a href="index.php?ua" ><img src="images/UA.png"  alt="UA"></a></div>
-            <div class="space"><a href="index.php?ru" ><img src="images/RU.png" alt="RU"></a></div>
-            <div class="space"><a href="index.php?en" ><img src="images/US.png" alt="US"> </a></div>
+            <div class="space"><a href="index.php?ua" ><img src="images/flags/UA.png"  alt="UA"></a></div>
+            <div class="space"><a href="index.php?ru" ><img src="images/flags/RU.png" alt="RU"></a></div>
+            <div class="space"><a href="index.php?en" ><img src="images/flags/US.png" alt="US"> </a></div>
         </div>
         <?php
         include 'file.php';
@@ -91,7 +94,7 @@
                     elseif ($summa == "chet" & $letter == "soglasnaya") {
                         echo "Junior PHP developer";
                     }
-                    ?>
+                ?>
             </h1>
             <table class="table table-bordered">
                 <tr>
