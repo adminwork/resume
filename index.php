@@ -9,24 +9,32 @@
     <?php
         $str = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
         $lang= substr("$str", 0, 2);
-        //var_dump($lang);
-        //$lang="en";
-        if (isset ($_GET["ru"])){
-            $lang="ru";
+//        var_dump($_GET["lang"]);
+//        //$lang="en";
+        if (isset ($_GET)){
+            $langa="en";
         }
-        if (isset ($_GET["en"])) {
-            $lang = "en";
+//        if (isset ($_GET["lang"]) == ("ru")){
+//            $langa="ru";
+//
+//        }
+//    var_dump($langa);
+//        if (isset ($_GET["lang"]) == ("en")) {
+//            $langa = "en";
+//        }
+//        if (isset ($_GET["lang"]) == ("ua")){
+//            $langa="ua";
+//        }
+        foreach($_GET as $key => $value){
+            $langa="$value";
         }
-        if (isset ($_GET["ua"])){
-            $lang="ua";
-        }
-        $array = parse_ini_file($lang.".ini"); //Open the corresponding language file
+        $array = parse_ini_file($langa.".ini"); //Open the corresponding language file
     ?>
     <div class="container">
         <div  style="height: 35px" align="center">
-            <div class="space"><a href="index.php?ua" ><img src="images/flags/UA.png"  alt="UA"></a></div>
-            <div class="space"><a href="index.php?ru" ><img src="images/flags/RU.png" alt="RU"></a></div>
-            <div class="space"><a href="index.php?en" ><img src="images/flags/US.png" alt="US"> </a></div>
+            <div class="space"><a href="index.php?lang=ua" ><img src="images/flags/UA.png"  alt="UA"></a></div>
+            <div class="space"><a href="index.php?lang=ru" ><img src="images/flags/RU.png" alt="RU"></a></div>
+            <div class="space"><a href="index.php?lang=en" ><img src="images/flags/US.png" alt="US"> </a></div>
         </div>
         <?php
         include 'file.php';
