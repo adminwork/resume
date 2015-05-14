@@ -9,26 +9,13 @@
     <?php
         $str = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
         $lang= substr("$str", 0, 2);
-//        var_dump($_GET["lang"]);
-//        //$lang="en";
         if (isset ($_GET)){
             $langa="en";
         }
-//        if (isset ($_GET["lang"]) == ("ru")){
-//            $langa="ru";
-//
-//        }
-//    var_dump($langa);
-//        if (isset ($_GET["lang"]) == ("en")) {
-//            $langa = "en";
-//        }
-//        if (isset ($_GET["lang"]) == ("ua")){
-//            $langa="ua";
-//        }
         foreach($_GET as $key => $value){
             $langa="$value";
         }
-        $array = parse_ini_file($langa.".ini"); //Open the corresponding language file
+        $array = parse_ini_file("languages/$langa.ini"); //Open the corresponding language file
     ?>
     <div class="container">
         <div  style="height: 35px" align="center">
