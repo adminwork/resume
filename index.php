@@ -61,17 +61,15 @@
         <div class="panel panel-default">                                                                   <!-- Content -->
             <h1 style="text-align: center">
                 <?php
-                    $name = "Ivan";
-                    $day = 22;
-                    $month = 05;
-                    $year = 1989;
+                function prov($name,$day,$month,$year)
+                {
                     $summ = $day + $month + $year;
-                    if(($summ % 2) == 0){
+                    if (($summ % 2) == 0) {
                         $summa = "chet";
-                    }else{
+                    } else {
                         $summa = "nechet";
                     }
-                    $letterArray = array('A','E','O','I','U');
+                    $letterArray = array('A', 'E', 'O', 'I', 'U');
                     if (in_array($name[0], $letterArray)) {
                         $letter = "glasnaya";
                     } else {
@@ -79,16 +77,15 @@
                     }
                     if ($summa == "chet" & $letter == "glasnaya") {
                         echo "Junior PHP";
-                    }
-                    elseif ($summa == "nechet" & $letter == "glasnaya") {
+                    } elseif ($summa == "nechet" & $letter == "glasnaya") {
                         echo "Intern PHP";
-                    }
-                    elseif ($summa == "nechet" & $letter == "soglasnaya") {
+                    } elseif ($summa == "nechet" & $letter == "soglasnaya") {
                         echo "Intern PHP developer";
-                    }
-                    elseif ($summa == "chet" & $letter == "soglasnaya") {
+                    } elseif ($summa == "chet" & $letter == "soglasnaya") {
                         echo "Junior PHP developer";
                     }
+                }
+                prov("Ivan",22,05,1989);
                 ?>
             </h1>
             <table class="table table-bordered">
