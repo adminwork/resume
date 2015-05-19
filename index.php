@@ -63,6 +63,8 @@
                 <?php
                 function prov($name,$day,$month,$year)
                 {
+
+
                     $summ = $day + $month + $year;
                     if (($summ % 2) == 0) {
                         $summa = "chet";
